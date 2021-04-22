@@ -42,7 +42,7 @@ cat << xYMLx >> tasks/$HOST_NAME.yml
     host_groups:
      - $HOSTGROUPS
     link_templates:
-     - ICMP Ping
+     - Template Module ICMP Ping
     status: enabled
     state: present
     inventory_mode: automatic
