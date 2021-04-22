@@ -1,0 +1,21 @@
+---
+- name: Create Hlidac_Elektriky-Zvicina $ or update
+  zabbix_host:
+    server_url: "{{ server_url }}"
+    login_user: "{{ lookup('env','ZABBIX_USER') }}"
+    login_password: "{{ lookup('env','ZABBIX_PASSWORD') }}"
+    host_name: Hlidac_Elektriky-Zvicina
+    visible_name: Hlidac_Elektriky-Zvicina
+    host_groups:
+     - WiFi_AP
+    link_templates:
+     - ICMP Ping
+    status: enabled
+    state: present
+    inventory_mode: automatic
+    interfaces:
+      - type: 1
+        main: 1
+        useip: 1
+        ip: 10.160.116.106
+        port: "10050"

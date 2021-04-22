@@ -1,0 +1,19 @@
+---
+- name: Using Zabbix collection
+  hosts: localhost
+  collections:
+    - community.zabbix
+
+  vars_files:
+    - vars/vars.yml
+
+  tasks:
+    - include_tasks: tasks/AirFiber2X_ZS_5kvdk.yml
+    - include_tasks: tasks/Hlidac_Elektriky-Zvicina.yml
+    - include_tasks: tasks/Hlidac_Elektriky_5.Kvetna2195.yml
+    - include_tasks: tasks/ISO_5AC_LMNET-010-ZAH-274N.yml
+    - include_tasks: tasks/ISO_5AC_LMNET-090-ZAH-274AC.yml
+    - include_tasks: tasks/SW_ZaleziVodojem.yml
+    - include_tasks: tasks/SW_ZaleziVodojem2.yml
+    - include_tasks: tasks/SW_5.Kvetna2195_LK.yml
+    - include_tasks: tasks/SW_5.Kvetna2195_MK.yml

@@ -1,0 +1,21 @@
+---
+- name: Create SW_5.Kvetna2195_MK $ or update
+  zabbix_host:
+    server_url: "{{ server_url }}"
+    login_user: "{{ lookup('env','ZABBIX_USER') }}"
+    login_password: "{{ lookup('env','ZABBIX_PASSWORD') }}"
+    host_name: SW_5.Kvetna2195_MK
+    visible_name: SW_5.Kvetna2195_MK
+    host_groups:
+     - SW
+    link_templates:
+     - ICMP Ping
+    status: enabled
+    state: present
+    inventory_mode: automatic
+    interfaces:
+      - type: 1
+        main: 1
+        useip: 1
+        ip: 10.244.19.132
+        port: "10050"

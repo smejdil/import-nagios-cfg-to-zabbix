@@ -1,0 +1,21 @@
+---
+- name: Create AirFiber2X_ZS_5kvdk $ or update
+  zabbix_host:
+    server_url: "{{ server_url }}"
+    login_user: "{{ lookup('env','ZABBIX_USER') }}"
+    login_password: "{{ lookup('env','ZABBIX_PASSWORD') }}"
+    host_name: AirFiber2X_ZS_5kvdk
+    visible_name: AirFiber2X_ZS_5kvdk
+    host_groups:
+     - MK
+    link_templates:
+     - ICMP Ping
+    status: enabled
+    state: present
+    inventory_mode: automatic
+    interfaces:
+      - type: 1
+        main: 1
+        useip: 1
+        ip: 10.210.94.3
+        port: "10050"

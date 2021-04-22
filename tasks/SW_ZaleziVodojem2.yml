@@ -1,0 +1,21 @@
+---
+- name: Create SW_ZaleziVodojem2 $ or update
+  zabbix_host:
+    server_url: "{{ server_url }}"
+    login_user: "{{ lookup('env','ZABBIX_USER') }}"
+    login_password: "{{ lookup('env','ZABBIX_PASSWORD') }}"
+    host_name: SW_ZaleziVodojem2
+    visible_name: SW_ZaleziVodojem2
+    host_groups:
+     - Opticky_SW
+    link_templates:
+     - ICMP Ping
+    status: enabled
+    state: present
+    inventory_mode: automatic
+    interfaces:
+      - type: 1
+        main: 1
+        useip: 1
+        ip: 100.64.0.48
+        port: "10050"

@@ -1,0 +1,6 @@
+---
+# zabbix server
+
+server_url: http://zabbix.pfsense.cz
+
+# EOF

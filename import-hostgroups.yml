@@ -1,0 +1,15 @@
+---
+- name: Using Zabbix collection
+  hosts: localhost
+  collections:
+    - community.zabbix
+
+  vars_files:
+    - vars/vars.yml
+
+  tasks:
+    - include_tasks: tasks/MK.yml
+    - include_tasks: tasks/Opticky_SW.yml
+    - include_tasks: tasks/SW.yml
+    - include_tasks: tasks/UBNT_sektor.yml
+    - include_tasks: tasks/WiFi_AP.yml
